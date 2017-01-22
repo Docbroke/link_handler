@@ -27,7 +27,7 @@ curl-save) $TERM -e curl -L -o ~/Downloads/curl.html --user-agent Mozilla/5.0 "$
 ## save full page with wget, saved in Downloads
 wget-saveall) $TERM -e wget --user-agent=Mozilla/5.0 --mirror -p --convert-links -P ~/Downloads "$1" ;;
 ## use any other external program with !chromium or !firefox or ?firefox etc.
-*) "$option" "$1" ;;
+*) $option "$1" ;;
 esac
 }
 
@@ -48,7 +48,7 @@ curl-save) $TERM -e curl -L -o ~/Downloads/curl.html --user-agent Mozilla/5.0 "$
 ## save full page with wget, saved in Downloads
 wget-saveall) $TERM -e wget --user-agent=Mozilla/5.0 --mirror -p --convert-links -P ~/Downloads "$(xclip -o -selection $SELECTION)" ;;
 ## use any other external program with !chromium or !firefox or ?firefox etc.
-*) "$option" "$(xclip -o -selection $SELECTION)" ;;
+*) $option "$(xclip -o -selection $SELECTION)" ;;
 esac
 }
 
