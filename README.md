@@ -7,3 +7,5 @@ If you are on low bandwidth connection you can also put w3mpv and w3ytdl in your
 copy any link, open link_handler and choose option of open the link with, you can choose from give option or write your own for example input "chromium" to open link with chromium.
 
 DEPENDS on: curl, wget, mpv, youtube-dl
+
+NOTE: lariza_external_handler is specifically created for [url=https://github.com/vain/lariza]lariza[/url], (new upcoming feature of lariza allows external program to open url with, currently this feature is available in dev-external-handler branch)
