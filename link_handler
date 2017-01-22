@@ -6,7 +6,7 @@ SELECTION=clipboard
 TERM=sakura
 shopt -s lastpipe
 
-echo -e "w3m\nmpv\nMPV\nyoutube-dl\nYOUTUBE-DL\ntransmission\ncurl-download\ncurl-save\nwget-saveall" | /usr/bin/dmenu -b | read "option"
+echo -e "chromium\nw3m\nmpv\nMPV\nyoutube-dl\nYOUTUBE-DL\ntransmission\ncurl-download\ncurl-save\nwget-saveall" | /usr/bin/dmenu -b | read "option"
 
 case "$option" in
 
