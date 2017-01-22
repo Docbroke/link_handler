@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# download youtube video using youtube-dl, for low bandwidth connection
+youtube-dl --format="[height <? 720]" $1
