@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# play youtube video using MPV, for low bandwidth connections
+
+mpv --ytdl-format="[height <= 480]" $1
