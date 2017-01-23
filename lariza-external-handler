@@ -11,7 +11,7 @@ ROFI='/usr/bin/dmenu -b'
 
 uselariza() {
 
-echo -e "chromium\nw3m\nmpv\nMPV\nyoutube-dl\nYOUTUBE-DL\ntransmission\ncurl-download\ncurl-save\nwget-saveall" | $ROFI | read "option"
+echo -e "lariza\nchromium\nw3m\nmpv\nMPV\nyoutube-dl\nYOUTUBE-DL\ntransmission\ncurl-download\ncurl-save\nwget-saveall" | $ROFI | read "option"
 
 
 case "$option" in
