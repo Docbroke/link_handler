@@ -44,7 +44,11 @@ curl-save) $TERM -e curl -L -o ~/Downloads/curl.html --user-agent Mozilla/5.0 "$
 ## save full page with wget, saved in Downloads
 wget-saveall) $TERM -e wget --user-agent=Mozilla/5.0 --mirror -p --convert-links -P ~/Downloads "$1" ;;
 # add bookmark
-add-bookmark) echo "$1" >> ~/.config/lariza/bookmarks ;; 
+add-bookmark) 
+	    echo -e "news\nlinux\ncycling\nsocial\nshopping\ntravel" | rofi -dmenu -location 1 -l 6 -width 100 -p : -font "Inconsolata 14" -mesg "choose tag for bookmark" | read tag
+	    ## uncomment below for use with dmenu and comment out the upper line ##
+	    # echo -e "news\nlinux\ncycling\nsocial\nshopping\ntravel" | /usr/bin/dmenu -fn "Inconsolata 14" -p "choose tag" | read tag
+	    echo "$1 $tag" >> ~/.config/lariza/bookmarks ;; 
 ## use any other external program with !chromium or !firefox or ?firefox etc.
 *) $option "$1" ;;
 esac
