@@ -1,6 +1,10 @@
 # link_handler
 dmenu/rofi based link handler, which gives option to open link with... (link grabed from primary/clipboard)
 
+
+![image](https://github.com/Docbroke/link_handler/blob/master/image.jpg)
+
+
 USE: put lariza- external-handler in your path and make it executable.
 If you are on low bandwidth connection you can also put w3mpv and w3ytdl in your path (execuatable) to open/download videos in lower resolution
 
