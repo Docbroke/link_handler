@@ -19,7 +19,6 @@ ops=(
     add-bookmark
 )
 
-
 uselariza() {
 
 # to use with rofi ##
