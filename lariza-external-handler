@@ -5,14 +5,29 @@ SELECTION=clipboard
 #choose your terminal
 TERM=sakura
 shopt -s lastpipe
-#ROFI='rofi -dmenu -location 1 -l 9 -width 100 -p OPEN_WITH:'
-ROFI='/usr/bin/dmenu -b'
+
+ops=(
+    w3m
+    mpv
+    MPV
+    youtube-dl
+    YOUTUBE_DL
+    transmission
+    curl-download
+    curl-save
+    wget-saveall
+    add-bookmark
+)
 
 
 uselariza() {
 
-echo -e "lariza\nchromium\nw3m\nmpv\nMPV\nyoutube-dl\nYOUTUBE-DL\ntransmission\ncurl-download\ncurl-save\nwget-saveall" | $ROFI | read "option"
+# to use with rofi ##
+option=$(for i in "${ops[@]}"; do echo "$i"; done |  rofi -dmenu -location 1 -l 10 -width 100 -p : -font "Inconsolata 14" -mesg "open <u>$1</u> with...")
+## uncomment below line to use with dmenu , and comment out line before this ##
+# option=$(for i in "${ops[@]}"; do echo "$i"; done | /usr/bin/dmenu -b )
 
+[[ ! $option ]] && exit
 
 case "$option" in
 
@@ -29,6 +44,8 @@ curl-download) $TERM -e curl -L -O --user-agent Mozilla/5.0 "$1" ;;
 curl-save) $TERM -e curl -L -o ~/Downloads/curl.html --user-agent Mozilla/5.0 "$1" ;;
 ## save full page with wget, saved in Downloads
 wget-saveall) $TERM -e wget --user-agent=Mozilla/5.0 --mirror -p --convert-links -P ~/Downloads "$1" ;;
+# add bookmark
+add-bookmark) echo "$1" >> ~/.config/lariza/bookmarks ;; 
 ## use any other external program with !chromium or !firefox or ?firefox etc.
 *) $option "$1" ;;
 esac
@@ -36,6 +53,6 @@ esac
 
 getopts u: name
 case $name in
-u)  uselariza $OPTARG ;;
+u) uselariza $OPTARG ;;
 *) uselariza "$(xclip -o -selection $SELECTION)" ;;
 esac
