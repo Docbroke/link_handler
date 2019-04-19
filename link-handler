@@ -15,11 +15,9 @@ ops=(
 #    curl-download
 #    curl-save
     send_to_kodi
-    aria2
     wget
     add-bookmark
     w3m
-    trans
     def
     guj
     netsurf
