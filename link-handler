@@ -19,7 +19,7 @@ ops=(
     wget
     add-bookmark
     w3m
-    transmission
+    trans
     def
     guj
     netsurf
@@ -48,10 +48,6 @@ news) vimb -p news "$url" ;;
 mpv) $TERM --class=TERM -e "mpv --no-resume-playback --ytdl-format=18/43/best $url" ;;
 vlc) $TERM --class=TERM -e "cvlc $url" ;;
 video-play-download) $TERM --class=TERM -e "hotstar $url" ;;
-## download torrent using transmission-cli
-#aria2) export DIANA_SECRET_TOKEN=tejashwi; export DIANA_HOST=docstore; diana add "$url" ;;
-aria2) aria2c --dir=/home/sharad/Downloads/aria2 --log=/home/sharad/Downloads/aria2/aria2.log --no-conf "$url" ;;
-transmission) transmission-remote-cli -c docstore:9091 "$url" ;;
 ## downlod with curl in current dir (home)
 curl-download) $TERM -e "curl -g -L -J -O --user-agent Mozilla/5.0 $url" ;;
 ## save page as curl.html in Downloads
